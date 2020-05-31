@@ -7,10 +7,10 @@ import static org.junit.jupiter.api.Assertions.*;
 class RadioVolumeTest {
 
     @Test
-    void increaseCurrentVolume() {
+    void addSound() {
         Radio radio = new Radio();
         radio.setCurrentVolume(9);
-        radio.increaseCurrentVolume();
+        radio.soundLouder();
         assertEquals(10, radio.getCurrentVolume());
     }
 
@@ -18,7 +18,7 @@ class RadioVolumeTest {
     void currentVolumeEqualMaxVolume() {
         Radio radio = new Radio();
         radio.setCurrentVolume(10);
-        radio.increaseCurrentVolume();
+        radio.soundLouder();
         assertEquals(radio.getMaxVolume(), radio.getCurrentVolume());
     }
 
@@ -26,15 +26,15 @@ class RadioVolumeTest {
     void currentVolumeMoreMaxVolume() {
         Radio radio = new Radio();
         radio.setCurrentVolume(11);
-        radio.increaseCurrentVolume();
+        radio.soundLouder();
         assertEquals(radio.getMaxVolume(), radio.getCurrentVolume());
     }
 
     @Test
-    void decreaseCurrentVolume() {
+    void reduceSound() {
         Radio radio = new Radio();
         radio.setCurrentVolume(1);
-        radio.decreaseCurrentVolume();
+        radio.soundQuieter();
         assertEquals(0, radio.getCurrentVolume());
     }
 
@@ -42,7 +42,7 @@ class RadioVolumeTest {
     void currentVolumeEqualMinVolume() {
         Radio radio = new Radio();
         radio.setCurrentVolume(0);
-        radio.decreaseCurrentVolume();
+        radio.soundQuieter();
         assertEquals(radio.getMinVolume(), radio.getCurrentVolume());
     }
 
@@ -50,7 +50,7 @@ class RadioVolumeTest {
     void currentVolumeLessMinVolume() {
         Radio radio = new Radio();
         radio.setCurrentVolume(-1);
-        radio.decreaseCurrentVolume();
+        radio.soundQuieter();
         assertEquals(radio.getMinVolume(), radio.getCurrentVolume());
     }
 }
