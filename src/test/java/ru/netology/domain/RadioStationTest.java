@@ -23,14 +23,6 @@ class RadioStationTest {
     }
 
     @Test
-    void currentStatinMoreMaxStation() {
-        Radio radio = new Radio();
-        radio.setCurrentStation(10);
-        radio.nextStatin();
-        assertEquals(radio.getMinStation(), radio.getCurrentStation());
-    }
-
-    @Test
     void prevStation() {
         Radio radio = new Radio();
         radio.setCurrentStation(1);
@@ -42,14 +34,6 @@ class RadioStationTest {
     void currentStationEqualMinStation() {
         Radio radio = new Radio();
         radio.setCurrentStation(0);
-        radio.prevStation();
-        assertEquals(radio.getMaxStation(), radio.getCurrentStation());
-    }
-
-    @Test
-    void currentStationLessMinStation() {
-        Radio radio = new Radio();
-        radio.setCurrentStation(-1);
         radio.prevStation();
         assertEquals(radio.getMaxStation(), radio.getCurrentStation());
     }
