@@ -15,13 +15,13 @@ class RadioSettersVolumeTest {
 
     @Test
     void setCurrentVolumeEqualsMaxVolume() {
-        radio.setCurrentVolume(10);
+        radio.setCurrentVolume(100);
         assertEquals(radio.getMaxVolume(), radio.getCurrentVolume());
     }
 
     @Test
     void setCurrentVolumeMoreMaxVolume() {
-        radio.setCurrentVolume(11);
+        radio.setCurrentVolume(101);
         assertEquals(radio.getMaxVolume(), radio.getCurrentVolume());
     }
 

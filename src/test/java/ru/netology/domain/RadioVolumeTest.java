@@ -16,7 +16,7 @@ class RadioVolumeTest {
 
     @Test
     void currentVolumeEqualMaxVolume() {
-        radio.setCurrentVolume(10);
+        radio.setCurrentVolume(100);
         radio.soundLouder();
         assertEquals(radio.getMaxVolume(), radio.getCurrentVolume());
     }
