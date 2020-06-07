@@ -5,38 +5,34 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 class RadioSettersVolumeTest {
+    Radio radio = new Radio();
 
     @Test
     void setCurrentVolume() {
-        Radio radio = new Radio();
         radio.setCurrentVolume(5);
         assertEquals(5, radio.getCurrentVolume());
     }
 
     @Test
     void setCurrentVolumeEqualsMaxVolume() {
-        Radio radio = new Radio();
-        radio.setCurrentVolume(10);
+        radio.setCurrentVolume(100);
         assertEquals(radio.getMaxVolume(), radio.getCurrentVolume());
     }
 
     @Test
     void setCurrentVolumeMoreMaxVolume() {
-        Radio radio = new Radio();
-        radio.setCurrentVolume(11);
+        radio.setCurrentVolume(101);
         assertEquals(radio.getMaxVolume(), radio.getCurrentVolume());
     }
 
     @Test
     void setCurrentVolumeEqualsMinVolume() {
-        Radio radio = new Radio();
         radio.setCurrentVolume(0);
         assertEquals(radio.getMinVolume(), radio.getCurrentVolume());
     }
 
     @Test
     void setCurrentVolumeLessMinVolume() {
-        Radio radio = new Radio();
         radio.setCurrentVolume(-1);
         assertEquals(radio.getMinVolume(), radio.getCurrentVolume());
     }

@@ -5,10 +5,10 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 class RadioVolumeTest {
+    Radio radio = new Radio();
 
     @Test
     void addSound() {
-        Radio radio = new Radio();
         radio.setCurrentVolume(9);
         radio.soundLouder();
         assertEquals(10, radio.getCurrentVolume());
@@ -16,15 +16,13 @@ class RadioVolumeTest {
 
     @Test
     void currentVolumeEqualMaxVolume() {
-        Radio radio = new Radio();
-        radio.setCurrentVolume(10);
+        radio.setCurrentVolume(100);
         radio.soundLouder();
         assertEquals(radio.getMaxVolume(), radio.getCurrentVolume());
     }
 
     @Test
     void reduceSound() {
-        Radio radio = new Radio();
         radio.setCurrentVolume(1);
         radio.soundQuieter();
         assertEquals(0, radio.getCurrentVolume());
@@ -32,7 +30,6 @@ class RadioVolumeTest {
 
     @Test
     void currentVolumeEqualMinVolume() {
-        Radio radio = new Radio();
         radio.setCurrentVolume(0);
         radio.soundQuieter();
         assertEquals(radio.getMinVolume(), radio.getCurrentVolume());
