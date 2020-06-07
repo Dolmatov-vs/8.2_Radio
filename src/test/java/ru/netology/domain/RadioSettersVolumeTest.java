@@ -9,7 +9,8 @@ class RadioSettersVolumeTest {
 
     @Test
     void setCurrentVolume() {
-        radio.setCurrentVolume(5);
+        Radio radio = new Radio(10, 10, 0, 5, 10, 0);
+
         assertEquals(5, radio.getCurrentVolume());
     }
 
